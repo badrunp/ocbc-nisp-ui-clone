@@ -1,0 +1,10 @@
+/* .navbar::after{
+    content: '';
+    position: absolute;
+    background: blue;
+    top: 40px;
+    left: 0;
+    width: 100%;
+    height: 20px;
+    z-index: 100;
+} */

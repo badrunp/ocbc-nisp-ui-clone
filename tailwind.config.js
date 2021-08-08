@@ -8,7 +8,8 @@ module.exports = {
     extend: {
       spacing: {
         '37': '146.94px',
-        '17': '72px'
+        '17': '72px',
+        '97': '400px'
       }
     },
   },
@@ -16,10 +17,13 @@ module.exports = {
     extend: {
       display: ['group-hover', 'hover'],
       width: ['group-hover', 'hover'],
+      height: ['group-hover', 'hover'],
       transform: ['group-hover', 'hover'],
       translate: ['hover', 'group-hover'],
+      scale: ['hover', 'group-hover'],
       visibility: ['hover', 'group-hover']
     },
   },
-  plugins: [],
+  plugins: [
+  ],
 }

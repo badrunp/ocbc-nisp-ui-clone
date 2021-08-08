@@ -7,11 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OCBC-NISP-CLONE</title>
     <link rel="stylesheet" href="./css/app.css">
+    <link rel="stylesheet" href="./css/custom.css">
 </head>
 
 <body>
-    <nav class="z-20 w-full">
-        <div class="w-full h-auto shadow-xl bg-white">
+    <nav class="w-full fixed top-0 left-0" x-data="hanldeNavbar.handleMouse()">
+        <div class="navbar w-full h-auto shadow-xl bg-white z-30">
             <div class="w-full px-5 h-16 lg:h-17 container mx-auto  ">
                 <div class="flex items-center justify-between flex-row h-full space-x-4">
                     <div class="mr-4">
@@ -19,36 +20,229 @@
                             <img src="./images/ocbc-red.svg" alt="" class="w-37">
                         </div>
                     </div>
-                    <ul class="flex-grow flex h-full flex-row items-center">
+                    <ul class="flex-grow flex h-full flex-row items-center group" @mouseenter="handleOpen()"
+                        @mouseleave="handleClose()">
                         <li class="h-full flex items-center flex-row group">
                             <a href="#"
-                                class="flex items-center px-4 text-gray-500 leading-normal tracking-normal font-semibold h-full">Individu
+                                class="flex items-center px-4 text-gray-500 leading-normal tracking-normal font-semibold hover:text-red-500 transition ease-out duration-150 h-full">Individu
                             </a>
                         </li>
                         <li class="h-full flex items-center flex-row">
                             <a href="#"
-                                class="flex items-center px-4 text-gray-500 leading-normal tracking-normal font-semibold h-full">UKM</a>
+                                class="flex items-center px-4 text-gray-500 leading-normal tracking-normal font-semibold hover:text-red-500 transition ease-out duration-150 h-full">UKM</a>
                         </li>
                         <li class="h-full flex items-center flex-row">
                             <a href="#"
-                                class="flex items-center px-4 text-gray-500 leading-normal tracking-normal font-semibold h-full">Korporasi</a>
+                                class="flex items-center px-4 text-gray-500 leading-normal tracking-normal font-semibold hover:text-red-500 transition ease-out duration-150 h-full">Korporasi</a>
                         </li>
                         <li class="h-full flex items-center flex-row">
                             <a href="#"
-                                class="flex items-center px-4 text-gray-500 leading-normal tracking-normal font-semibold h-full ">Syariah</a>
+                                class="flex items-center px-4 text-gray-500 leading-normal tracking-normal font-semibold hover:text-red-500 transition ease-out duration-150 h-full ">Syariah</a>
                         </li>
                         <li class="h-full flex items-center flex-row">
                             <a href="#"
-                                class="flex items-center px-4 text-gray-500 leading-normal tracking-normal font-semibold h-full ">Tentang
+                                class="flex items-center px-4 text-gray-500 leading-normal tracking-normal font-semibold hover:text-red-500 transition ease-out duration-150 h-full ">Tentang
                                 Kami</a>
                         </li>
                         <li class="h-full flex items-center flex-row">
                             <a href="#"
-                                class="flex items-center px-4 text-gray-500 leading-normal tracking-normal font-semibold h-full ">Karir</a>
+                                class="flex items-center px-4 text-gray-500 leading-normal tracking-normal font-semibold hover:text-red-500 transition ease-out duration-150 h-full ">Karir</a>
                         </li>
-
-                        <div class="">
-
+                        <div
+                            class="invisible group-hover:visible w-full absolute top-10 left-0 z-30 h-8 transition-all duration-75 ease-out ">
+                            <div class="w-full h-full bg-transparent shadow-lg"></div>
+                        </div>
+                        <div
+                            class="invisible group-hover:visible w-full fixed bg-white top-17 z-20 left-0">
+                            <div class="container mx-auto pt-6 pb-14 lg:px-6">
+                                <div class="w-full relative h-0 group-hover:h-97 transition-all duration-200 ease-out flex flex-col space-y-16">
+                                     <ul class="grid grid-cols-6 gap-5">
+                                        <li class="transform opacity-0 translate-y-10 group-hover:opacity-100 group-hover:translate-y-0 transition-all ease-out duration-200 delay-75"> 
+                                            <ul class="flex flex-col space-y-2">
+                                                <li>
+                                                    <div class="w-auto h-auto overflow-hidden cursor-pointer rounded-lg">
+                                                        <img src="./images/individu-nyala.jpg" alt="" class="rounded-lg hover:transform hover:scale-105 transition ease-out duration-300">
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="block text-gray-600 text-sm font-semibold tracking-normal leading-normal hover:text-red-500 transition ease-out duration-150">Nyala</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="block text-gray-600 text-sm font-semibold tracking-normal leading-normal hover:text-red-500 transition ease-out duration-150">Nyala Individu</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="block text-gray-600 text-sm font-semibold tracking-normal leading-normal hover:text-red-500 transition ease-out duration-150">Nyala Bisnis</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="transform opacity-0 translate-y-10 group-hover:opacity-100 group-hover:translate-y-0 transition-all ease-out duration-200 delay-100">
+                                            <ul class="flex flex-col space-y-2">
+                                                <li>
+                                                    <div class="w-auto h-auto overflow-hidden cursor-pointer rounded-lg relative">
+                                                        <img src="./images/Simpanan_Mega-Menu_Desktop_2.jpg" alt="" class="rounded-lg hover:transform hover:scale-105 transition ease-out duration-300">
+                                                        <div class="absolute bottom-0 left-0 bg-transparent px-4 py-2 pointer-events-none">
+                                                            <span class="block text-base font-bold text-white tracking-normal leading-normal">Simpanan</span>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="block text-gray-600 text-sm font-semibold tracking-normal leading-normal hover:text-red-500 transition ease-out duration-150">Tabungan</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="block text-gray-600 text-sm font-semibold tracking-normal leading-normal hover:text-red-500 transition ease-out duration-150">Tabungan Berjangka</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="block text-gray-600 text-sm font-semibold tracking-normal leading-normal hover:text-red-500 transition ease-out duration-150">Deposito</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="transform opacity-0 translate-y-10 group-hover:opacity-100 group-hover:translate-y-0 transition-all ease-out duration-200" style="transition-delay: 125ms;">
+                                            <ul class="flex flex-col space-y-2">
+                                                <li>
+                                                    <div class="w-auto h-auto overflow-hidden cursor-pointer rounded-lg relative">
+                                                        <img src="./images/Kaartu-Transaksi_Mega-Menu_Desktop_2.jpg" alt="" class="rounded-lg hover:transform hover:scale-105 transition ease-out duration-300">
+                                                        <div class="absolute bottom-0 left-0 bg-transparent px-4 py-2 pointer-events-none">
+                                                            <span class="block text-base font-bold text-white tracking-normal leading-normal">Kartu Transaksi</span>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="block text-gray-600 text-sm font-semibold tracking-normal leading-normal hover:text-red-500 transition ease-out duration-150">Kartu Debit</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="block text-gray-600 text-sm font-semibold tracking-normal leading-normal hover:text-red-500 transition ease-out duration-150">Kredit Kredit</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="transform opacity-0 translate-y-10 group-hover:opacity-100 group-hover:translate-y-0 transition-all ease-out duration-200" style="transition-delay: 150ms;">
+                                            <ul class="flex flex-col space-y-2">
+                                                <li>
+                                                    <div class="w-auto h-auto overflow-hidden cursor-pointer rounded-lg relative">
+                                                        <img src="./images/Pinjaman_Mega-Menu_Desktop_1.jpg" alt="" class="rounded-lg hover:transform hover:scale-105 transition ease-out duration-300">
+                                                        <div class="absolute bottom-0 left-0 bg-transparent px-4 py-2 pointer-events-none">
+                                                            <span class="block text-base font-bold text-white tracking-normal leading-normal">Pinjaman</span>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="block text-gray-600 text-sm font-semibold tracking-normal leading-normal hover:text-red-500 transition ease-out duration-150">KPR</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="block text-gray-600 text-sm font-semibold tracking-normal leading-normal hover:text-red-500 transition ease-out duration-150">KMG</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="block text-gray-600 text-sm font-semibold tracking-normal leading-normal hover:text-red-500 transition ease-out duration-150">KPM</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="block text-gray-600 text-sm font-semibold tracking-normal leading-normal hover:text-red-500 transition ease-out duration-150">KTA</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="transform opacity-0 translate-y-10 group-hover:opacity-100 group-hover:translate-y-0 transition-all ease-out duration-200" style="transition-delay: 175ms, 2s;">
+                                            <ul class="flex flex-col space-y-2">
+                                                <li>
+                                                    <div class="w-auto h-auto overflow-hidden cursor-pointer rounded-lg relative">
+                                                        <img src="./images/Wealth-Management_Mega-Menu_Desktop_1.jpg" alt="" class="rounded-lg hover:transform hover:scale-105 transition ease-out duration-300">
+                                                        <div class="absolute inset-0 px-4 py-2 bg-gradient-to-t from-gray-700 to-transparent pointer-events-none"></div>
+                                                        <div class="absolute bottom-0 left-0 bg-transparent px-4 py-2 pointer-events-none">
+                                                            <span class="block text-base font-bold text-white tracking-normal leading-normal">Investasi & Proteksi</span>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="block text-gray-600 text-sm font-semibold tracking-normal leading-normal hover:text-red-500 transition ease-out duration-150">Reksa Data</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="block text-gray-600 text-sm font-semibold tracking-normal leading-normal hover:text-red-500 transition ease-out duration-150">Asuransi</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="block text-gray-600 text-sm font-semibold tracking-normal leading-normal hover:text-red-500 transition ease-out duration-150">Valuta Asing</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="block text-gray-600 text-sm font-semibold tracking-normal leading-normal hover:text-red-500 transition ease-out duration-150">Obligasi</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="block text-gray-600 text-sm font-semibold tracking-normal leading-normal hover:text-red-500 transition ease-out duration-150">Structured Product</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="transform opacity-0 translate-y-10 group-hover:opacity-100 group-hover:translate-y-0 transition-all ease-out duration-200 delay-200">
+                                            <ul class="flex flex-col space-y-4">
+                                                <li>
+                                                    <div class="w-auto h-auto overflow-hidden cursor-pointer rounded-lg relative">
+                                                        <img src="./images/PREMIER_OCBC_Premier_1.jpg" alt="" class="rounded-lg hover:transform hover:scale-105 transition ease-out duration-300">
+                                                        <div class="absolute inset-0 px-4 py-2 bg-gradient-to-tr from-black to-transparent pointer-events-none"></div>
+                                                        <div class="absolute bottom-0 left-0 bg-transparent px-4 py-2 pointer-events-none">
+                                                            <span class="block text-base font-bold text-white tracking-normal leading-normal">Premier Banking</span>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="w-auto h-auto overflow-hidden cursor-pointer rounded-lg relative">
+                                                        <img src="./images/PRIVATE_OCBC_Private_10.jpg" alt="" class="rounded-lg hover:transform hover:scale-105 transition ease-out duration-300">
+                                                        <div class="absolute inset-0 px-4 py-2 bg-gradient-to-tr from-black to-transparent pointer-events-none"></div>
+                                                        <div class="absolute bottom-0 left-0 bg-transparent px-4 py-2 pointer-events-none">
+                                                            <span class="block text-base font-bold text-white tracking-normal leading-normal">Private Banking</span>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                    <ul class="grid grid-cols-6 gap-5">
+                                        <li class="transform opacity-0 translate-y-10 group-hover:opacity-100 group-hover:translate-y-0 transition-all ease-out duration-200">
+                                            <div class="flex items-center justify-center flex-row shadow-md rounded-lg space-x-4 py-4 px-4">
+                                                <div>
+                                                    <img src="./images/mega-menu-widget-1.svg" alt="">
+                                                </div>
+                                                <div>
+                                                    <p class="block text-gray-600 tracking-tight leading-normal font-medium">Digital Channel</p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="transform opacity-0 translate-y-10 group-hover:opacity-100 group-hover:translate-y-0 transition-all ease-out duration-200">
+                                            <div class="flex items-center justify-center flex-row shadow-md rounded-lg space-x-4 py-4 px-4">
+                                                <div>
+                                                    <img src="./images/mega-menu-widget-2.svg" alt="">
+                                                </div>
+                                                <div>
+                                                    <p class="block text-gray-600 tracking-tight leading-normal font-medium">Kalkulator</p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="transform opacity-0 translate-y-10 group-hover:opacity-100 group-hover:translate-y-0 transition-all ease-out duration-200">
+                                            <div class="flex items-center justify-center flex-row shadow-md rounded-lg space-x-4 py-4 px-4">
+                                                <div>
+                                                    <img src="./images/mega-menu-widget-3.svg" alt="">
+                                                </div>
+                                                <div>
+                                                    <p class="block text-gray-600 tracking-tight leading-normal font-medium">Poinseru</p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="transform opacity-0 translate-y-10 group-hover:opacity-100 group-hover:translate-y-0 transition-all ease-out duration-200">
+                                            <div class="flex items-center justify-center flex-row shadow-md rounded-lg space-x-4 py-4 px-4">
+                                                <div>
+                                                    <img src="./images/mega-menu-widget-6.svg" alt="">
+                                                </div>
+                                                <div>
+                                                    <p class="block text-gray-600 tracking-tight leading-normal font-medium">Promo</p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="transform opacity-0 translate-y-10 group-hover:opacity-100 group-hover:translate-y-0 transition-all ease-out duration-200">
+                                            <div class="flex items-center justify-center flex-row shadow-md rounded-lg space-x-4 py-4 px-4">
+                                                <div>
+                                                    <img src="./images/mega-menu-widget-6.svg" alt="">
+                                                </div>
+                                                <div>
+                                                    <p class="block text-gray-600 tracking-tight leading-normal font-medium">Program</p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                               </div>
+                            </div>
                         </div>
                     </ul>
                     <ul class="flex-grow flex h-full flex-row items-center px-3 justify-between ">
@@ -109,6 +303,7 @@
                                         </a>
                                     </li>
                                 </ul>
+
                             </div>
                         </li>
                         <li class="h-full flex items-center flex-row">
@@ -165,12 +360,17 @@
                 </div>
             </div>
         </div>
+        <div x-show="isDropdown" class="w-full bg-gray-900 fixed inset-0 top-17 z-10 bg-opacity-70"
+            x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0"
+            x-transition:enter-end="opacity-100" x-transition:leave="transition ease-out duration-200"
+            x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0"></div>
     </nav>
 
 
     <div class="w-full h-screen">
         <img src="./images/Banner.png" alt="" class="h-full w-full">
     </div>
+
 
     <script defer src="https://unpkg.com/alpinejs@3.2.3/dist/cdn.min.js"></script>
     <script src="./js/app.js"></script>
