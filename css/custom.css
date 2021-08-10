@@ -8,3 +8,7 @@
     height: 20px;
     z-index: 100;
 } */
+
+.text-hover-red:hover p{
+    color: rgba(329, 68, 68, 1);
+}   
