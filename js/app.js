@@ -1,6 +1,5 @@
-
-var hanldeNavbar = {
-    handleMouse: function () {
+var app = {
+    handleNavbar: function () {
         return {
             isDropdown: false,
             isIndividu: false,
@@ -10,6 +9,11 @@ var hanldeNavbar = {
             isTentang: false,
             isKarir: false,
             isDelayed: true,
+            isMenuItems: true,
+            isMenuSearch: false,
+            width: window.innerWidth,
+            isLogo: true,
+            isOpenMobileMenu: false,
             handleOpen: function (name) {
                 if (name == 'individu') {
                     this.isIndividu = true
@@ -72,14 +76,63 @@ var hanldeNavbar = {
                     this.isDelayed = true;
                 }, 1000)
             },
-            isDelayedCheck: function(){
-                return this.isDelayed == false
+            handleSearchOpen: function(){
+                this.isMenuSearch = true;
+                this.isMenuItems = false; 
+                if(this.width < 1280){
+                    this.isLogo = false
+                }else{
+                    this.isLogo = true
+                }
+            },
+            handleSearchClose: function(){
+                this.isMenuSearch = false;
+                this.isMenuItems = true;
+                this.isLogo = true;
+            },
+            handleResize: function(){
+                this.width = window.innerWidth;
+                if(window.innerWidth > 1280){
+                    this.isLogo = true;
+                }else{
+                    if(this.isMenuSearch == true){
+                        this.isLogo = false;
+                    }else{
+                        this.isLogo = true;
+                    }
+                }
+                if(window.innerWidth > 1280){
+                    this.isOpenMobileMenu = false;
+                }
+            },
+            handleToggleMobileMenu: function(){
+                this.isOpenMobileMenu = !this.isOpenMobileMenu;
+            },
+            handleToggleMobileMenuClose: function(){
+                this.isOpenMobileMenu = false;
+            },
+        }
+    },
+    handleCarousel: function(){
+        return {
+            isCarouselOpen: -1,
+            loop: function(){
+                setInterval(() => this.isCarouselOpen = (this.isCarouselOpen + 1) % 3, 6000);
+            },
+            init: function(){
+                if(this.isCarouselOpen == -1){
+                    setTimeout(()=> this.isCarouselOpen = 0)
+                }
+                
+                this.loop();
+                
             }
         }
     },
     init: function () {
-        this.handleMouse()
+        this.handleNavbar()
+        this.handleCarousel()
     }
 }
 
-hanldeNavbar.init();
+app.init();

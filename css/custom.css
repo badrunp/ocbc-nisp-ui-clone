@@ -12,3 +12,16 @@
 .text-hover-red:hover p{
     color: rgba(329, 68, 68, 1);
 }   
+
+.shadow-input-search{
+    box-shadow: 0 6px 10px 0 rgb(0 0 0 / 5%), 0 1px 18px 0 rgb(0 0 0 / 5%), 0 3px 5px 0 rgb(0 0 0 / 5%);
+}
+
+.translate-hamburger{
+    transform: rotate(135deg) translate(4px, -4px);
+    
+}
+.translate-hamburger-2{
+    transform: rotate(-135deg) translate(6px, 6px);
+
+}
