@@ -15,48 +15,24 @@ var app = {
             isLogo: true,
             isOpenMobileMenu: false,
             handleOpen: function (name) {
+                this.isIndividu = false;
+                this.isUkm = false;
+                this.isKoprasi = false;
+                this.isSyariah = false;
+                this.isTentang = false;
+                this.isKarir = false;
                 if (name == 'individu') {
                     this.isIndividu = true
-                    this.isUkm = false;
-                    this.isKoprasi = false;
-                    this.isSyariah = false;
-                    this.isTentang = false;
-                    this.isKarir = false;
                 } else if (name == 'ukm') {
-                    this.isIndividu = false;
                     this.isUkm = true;
-                    this.isKoprasi = false;
-                    this.isSyariah = false;
-                    this.isTentang = false;
-                    this.isKarir = false;
                 } else if (name == 'koprasi') {
-                    this.isIndividu = false
-                    this.isUkm = false;
                     this.isKoprasi = true;
-                    this.isSyariah = false;
-                    this.isTentang = false;
-                    this.isKarir = false;
                 } else if (name == 'syariah') {
-                    this.isIndividu = false;
-                    this.isUkm = false;
-                    this.isKoprasi = false;
                     this.isSyariah = true;
-                    this.isTentang = false;
-                    this.isKarir = false;
                 } else if (name == 'tentang') {
-                    this.isIndividu = false;
-                    this.isUkm = false;
-                    this.isKoprasi = false;
-                    this.isSyariah = false;
                     this.isTentang = true;
-                    this.isKarir = false;
                 } else if (name == 'karir') {
                     this.isKarir = true;
-                    this.isIndividu = false;
-                    this.isUkm = false;
-                    this.isKoprasi = false;
-                    this.isSyariah = false;
-                    this.isTentang = false;
                 }
             },
             handleOpen2: function () {

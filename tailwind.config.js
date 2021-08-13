@@ -51,6 +51,7 @@ module.exports = {
         '230': '2.3',
       },
       transitionDuration: {
+        '230': '230ms',
         '3000': '3000ms',
         '2500': '2500ms',
         '2000': '2000ms'
